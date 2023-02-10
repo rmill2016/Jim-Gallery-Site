@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html,
+    body {
+        @apply w-full h-full p-0 m-0 font-sans scroll-smooth md:overflow-x-hidden md:overflow-y-auto;
+    }
+    html {
+        @apply bg-primary;
+    }
+
+    section {
+        @apply w-full h-full;
+    }
+
+    #__next {
+        @apply h-screen max-h-screen;
+    }
+
+    a {
+        @apply list-none text-inherit;
+    }
+
+    * {
+        @apply box-border;
+    }
+
+    nav,
+    section,
+    footer {
+        @apply px-4 md:px-10 lg:px-14 xl:px-20;
+    }
+
+    ::-webkit-scrollbar-track {
+        @apply bg-white shadow-inner rounded-xl;
+    }
+
+    ::-webkit-scrollbar {
+        @apply w-3 bg-white;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        @apply rounded-xl bg-gradient-to-b from-slate-500 to-slate-900;
+    }
+}
+
+@layer utilities {
+    .flex-center {
+        @apply flex items-center justify-center w-full h-auto;
+    }
+    .grid-center {
+        @apply grid w-full h-full place-items-center;
+    }
+    .grid-start {
+        @apply grid w-full h-full place-items-start;
+    }
+    .link-l-r {
+        @apply relative after:absolute after:h-px after:w-0 hover:after:w-full after:bg-white after:bottom-[-10px] after:left-0  after:transition-all after:duration-500;
+    }
+    .link-t-b {
+        @apply relative after:absolute after:w-2 after:h-0 hover:after:h-full after:bg-white after:left-auto after:-right-4 after:transition-all after:duration-500;
+    }
+    .leading-accent {
+        @apply relative before:absolute before:h-px before:w-10 before:bg-accent before:left-0 before:bottom-1/2;
+    }
+    .mySwiper {
+        @apply w-full h-full;
+    }
+    .mySwiper .swiper-button-prev {
+        @apply left-0 w-fit h-fit md:bottom-0;
+    }
+    .mySwiper .swiper-button-next {
+        @apply right-0 w-fit h-fit md:bottom-0;
+    }
+}
+
+@layer components {
+    input#search {
+        @apply rounded-full h-8 placeholder:text-black pl-4 w-[80%] mx-auto focus-within:outline-none lg:w-auto lg:mx-0;
+    }
+}
+
+.mySwiper .swiper-button-prev::after {
+    content: '';
+    background: url('../public/assets/left_arrow.png') no-repeat center center;
+    width: 50px;
+    height: 50px;
+}
+.mySwiper .swiper-button-next::after {
+    content: '';
+    background: url('../public/assets/right_arrow.png') no-repeat center center;
+    width: 50px;
+    height: 50px;
+}
